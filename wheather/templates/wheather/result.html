@@ -1,0 +1,30 @@
+{% extends "wheather/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="w3-container w3-center">
+    <h2 class="w3-centered">Погода на ближайшие дни:</h2>
+  
+    <table class="w3-table-all w3-centered w3-gray w3-xlarge">
+      <tr>
+        <th>Дата</th>
+        <th>День недели</th>
+        <th>Температура</th>
+        <th>Погода</th>
+      </tr>
+      {% for i in info %}
+      <tr>
+        <td>{{ i.date}}</td>
+        <td>{{ i.weekday}}</td>
+        <td>{{i.temp}} °C</td>
+        <td>{{i.wheather}}</td>
+      </tr>
+      {% endfor%}
+      
+    </table>
+    <br/>
+    <form action={% url 'main' %}>
+        <input type="submit" value="Назад" class="w3-button w3-round-xlarge w3-white w3-block" />
+    </form>
+  </div>
+{% endblock content%}

@@ -1,0 +1,17 @@
+{% extends "wheather/base.html" %}
+
+{% block content %}
+<h1 class="w3-jumbo w3-animate-top">Узнай погоду</h1>
+<form action={% url 'result' %} method='get' class='w3-container'>
+    <div class="container">
+        <input type="text" id="login" name='login' class="w3-input w3-round-xlarge w3-xlarge input-field"  placeholder="Введите логин">
+        <input type="text" id="city" name='city' class="w3-input w3-round-xlarge w3-xlarge input-field"  placeholder="Введите город">
+
+        {% if info.error %}
+            <p class='w3-red w3-center'> {{info.error}} </p>
+        {% endif %}
+
+        <button type="submit" class="w3-button w3-round-xlarge w3-white w3-block">Найти</button>
+    </div>
+</form>
+{% endblock content %}

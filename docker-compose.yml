@@ -1,0 +1,8 @@
+name: weather-project
+
+services:
+  weather:
+    image: weather-app:latest
+    
+    ports:
+      - 8000:8000

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+<title>WeatherToday</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href={%static 'wheather/main.css'%}>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url({%static 'wheather/fon.jpg'%});
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      WeatherToday
+    </div>
+    <div class="w3-display-topright w3-padding-large w3-xlarge">
+      Получить историю запросов
+      <form action={% url 'history' %}>
+        <input type="text" id="login" name='login' class="w3-input w3-round-xlarge w3-xlarge input-field"  placeholder="Введите логин">
+        <input type="submit" value="Получить" class="w3-button w3-round-xlarge w3-white w3-block" />
+    </form>
+    </div>
+    <div class="w3-display-middle">
+    {% block content%} {% endblock %}
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+      Сreated by <a href="https://t.me/ITiRex" target="_blank">FNX</a>
+    </div>
+  </div>
+  </body>
+</html>

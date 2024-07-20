@@ -1,0 +1,15 @@
+{% extends "wheather/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="w3-container w3-center">
+    <h2 class="w3-centered">Ошибка</h2>
+  
+   <h3 class="w3-centered">Неверный город</h3>
+
+    <br/>
+    <form action={% url 'main' %}>
+        <input type="submit" value="Назад" class="w3-button w3-round-xlarge w3-white w3-block" />
+    </form>
+  </div>
+{% endblock content%}
